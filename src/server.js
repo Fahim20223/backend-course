@@ -8,7 +8,10 @@ import express from "express";
 
 import { config } from "dotenv";
 
+config();
+
 //Import Routes
+
 import movieRoutes from "./routes/movieRoutes.js";
 
 const app = express();
