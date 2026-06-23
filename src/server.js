@@ -6,6 +6,8 @@
 // });
 import express from "express";
 
+import { config } from "dotenv";
+
 //Import Routes
 import movieRoutes from "./routes/movieRoutes.js";
 
