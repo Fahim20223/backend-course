@@ -23,3 +23,19 @@ password String
 createdAt DateTime @default(now())
 
 }
+
+
+model Movie {
+  id          String   @id @default(uuid())
+  title       String
+  overview    String?
+  releaseYear Int      
+  genres      String[] @default([])
+  runtime     Int?
+  posterUrl   String?  
+  createdBy   String   
+  createdAt   DateTime @default(now()) 
+
+  // creator User  @relation("MovieCreator", fields: [createdBy], references: [id], onDelete: Cascade)
+  // watchlistItems WatchlistItem[]
+}
