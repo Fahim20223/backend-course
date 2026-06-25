@@ -28,10 +28,6 @@ app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
 });
 
-// //Handled unhandled promise reactions (e.g. , database connection errors)
-// process.on("unhandledRejection", (err) => {
-//   console.error("Unhandled Rejection : ", err);
-// });
 // Handle unhandled promise rejections (e.g., database connection errors)
 process.on("unhandledRejection", (err) => {
   console.error("Unhandled Rejection:", err);
