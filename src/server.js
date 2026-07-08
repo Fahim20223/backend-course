@@ -9,7 +9,6 @@ import express from "express";
 import { config } from "dotenv";
 
 import { connectDB, disConnectDB } from "./config/db.js";
-import authRoutes from "./controllers/authController.js";
 
 config();
 connectDB();
@@ -17,6 +16,7 @@ connectDB();
 //Import Routes
 
 import movieRoutes from "./routes/movieRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 
