@@ -9,6 +9,7 @@ import express from "express";
 import { config } from "dotenv";
 
 import { connectDB, disConnectDB } from "./config/db.js";
+import authRoutes from "./controllers/authController.js";
 
 config();
 connectDB();
@@ -22,6 +23,7 @@ const app = express();
 //API ROUTES
 
 app.use("/movies", movieRoutes);
+app.use("/auth", authRoutes);
 
 const PORT = 5001;
 app.listen(PORT, () => {
