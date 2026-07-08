@@ -1,4 +1,5 @@
 const register = async (req, res) => {
-  res.json({ message: "It Works" });
+  const body = req.body;
+  res.json(body);
 };
 export { register };
