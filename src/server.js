@@ -8,7 +8,7 @@ import express from "express";
 
 import { config } from "dotenv";
 
-import { connectDB, disConnectDB } from "./config/db.js";
+import { connectDB, disconnectDB } from "./config/db.js";
 
 config();
 connectDB();
@@ -25,7 +25,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //API ROUTES
-
 app.use("/movies", movieRoutes);
 app.use("/auth", authRoutes);
 

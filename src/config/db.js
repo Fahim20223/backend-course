@@ -1,6 +1,10 @@
+import "dotenv/config";
+
 import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
+
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -27,8 +31,8 @@ const connectDB = async () => {
   }
 };
 
-const disConnectDB = async () => {
-  await prisma.$disConnect();
+const disconnectDB = async () => {
+  await prisma.$disconnect();
 };
 
-export { prisma, connectDB, disConnectDB };
+export { prisma, connectDB, disconnectDB };
