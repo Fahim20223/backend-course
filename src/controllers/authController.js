@@ -41,4 +41,18 @@ const register = async (req, res) => {
     },
   });
 };
-export { register };
+
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  // Check if user email exists in the table
+  const user = await prisma.user.findUnique({
+    where: { email: email },
+  });
+
+  if (!user) {
+    return res.status(401).json({ error: "Invalid email or password" });
+  }
+};
+
+export { register, login };
