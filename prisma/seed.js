@@ -101,3 +101,24 @@ const movies = [
     createdBy: userId,
   },
 ];
+
+const main = async () => {
+  console.group("Seeding movies...");
+
+  for (const movie of movies) {
+    await prisma.movie.create({
+      data: movie,
+    });
+    console.log(`Created movie: ${movie.title}`);
+  }
+  console.log("Seeding Completed!");
+};
+
+main()
+  .catch((err) => {
+    console.log(err);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
