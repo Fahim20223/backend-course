@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const creatorId = "f303ed48-b2ef-4933-8402-74ddb2015a4b";
+const userId = "f303ed48-b2ef-4933-8402-74ddb2015a4b";
 // we should create a env file for the creatorId Because this id just took from the thunder while pushing in register requesting
 
 const movies = [
