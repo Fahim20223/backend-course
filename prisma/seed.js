@@ -8,7 +8,9 @@ const pool = new Pool({
 
 const adapter = new PrismaPg(pool);
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  adapter,
+});
 
 const userId = "f303ed48-b2ef-4933-8402-74ddb2015a4b";
 // we should create a env file for the creatorId Because this id just took from the thunder while pushing in register requesting
